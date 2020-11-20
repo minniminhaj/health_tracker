@@ -18,21 +18,12 @@ class BmiResultsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.all(15.0),
-              alignment: Alignment.bottomLeft,
-              child: Text(
-                'Your Result',
-                style: kTitleTextStyle,
-              ),
-            ),
-          ),
           Expanded(
             flex: 5,
             child: ReusableCard(
@@ -59,7 +50,7 @@ class BmiResultsPage extends StatelessWidget {
             ),
           ),
           BottomButton(
-            buttonTitle: 'RE-CALCULATE',
+            buttonTitle: 'Re-Calculate',
             onTap: () {
               Navigator.pop(context);
             },

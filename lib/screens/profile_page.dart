@@ -4,7 +4,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Profile Details'),),
+        appBar: AppBar(title: Text('Profile Details'),centerTitle: true,),
     );
   }
 }

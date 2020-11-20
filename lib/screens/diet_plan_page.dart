@@ -5,7 +5,7 @@ class DietPlanPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(title: Text('Diet Plan'),),
+     appBar: AppBar(title: Text('Diet Plan'),centerTitle: true,),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../components/icon_content.dart';
 import '../components/reusable_card.dart';
 import '../constants.dart';
@@ -29,7 +30,8 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: Text('BMI'),
+        centerTitle: true,
       ),
       body:  ListView(
           children: <Widget>[
@@ -47,8 +49,7 @@ class _InputPageState extends State<InputPage> {
                         ? kActiveCardColour
                         : kInactiveCardColour,
                     cardChild: IconContent(
-                      //icon: FontAwesomeIcons.mars,
-                     icon:  Icons.circle,
+                      icon: FontAwesomeIcons.mars,
                       label: 'MALE',
                     ),
                   ),
@@ -64,8 +65,7 @@ class _InputPageState extends State<InputPage> {
                         ? kActiveCardColour
                         : kInactiveCardColour,
                     cardChild: IconContent(
-                      icon:  Icons.circle,
-                      //icon: FontAwesomeIcons.venus,
+                      icon: FontAwesomeIcons.venus,
                       label: 'FEMALE',
                     ),
                   ),
@@ -144,8 +144,7 @@ class _InputPageState extends State<InputPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               RoundIconButton(
-                                icon:  Icons.remove,
-                                  //icon: FontAwesomeIcons.minus,
+                                  icon: FontAwesomeIcons.minus,
                                   onPressed: () {
                                     setState(() {
                                       weight--;
@@ -155,8 +154,7 @@ class _InputPageState extends State<InputPage> {
                                 width: 10.0,
                               ),
                               RoundIconButton(
-                                icon:  Icons.add,
-                                //icon: FontAwesomeIcons.plus,
+                                icon: FontAwesomeIcons.plus,
                                 onPressed: () {
                                   setState(() {
                                     weight++;
@@ -187,8 +185,7 @@ class _InputPageState extends State<InputPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               RoundIconButton(
-                                icon:  Icons.add,
-                                //icon: FontAwesomeIcons.minus,
+                                icon: FontAwesomeIcons.minus,
                                 onPressed: () {
                                   setState(
                                     () {
@@ -201,8 +198,7 @@ class _InputPageState extends State<InputPage> {
                                 width: 10.0,
                               ),
                               RoundIconButton(
-                                  icon:  Icons.remove,
-                                  //icon: FontAwesomeIcons.plus,
+                                  icon: FontAwesomeIcons.plus,
                                   onPressed: () {
                                     setState(() {
                                       age++;
@@ -218,7 +214,7 @@ class _InputPageState extends State<InputPage> {
               ),
             ),
             BottomButton(
-              buttonTitle: 'CALCULATE',
+              buttonTitle: 'Calculate',
               onTap: () {
                 CalculatorBrain calc =
                     CalculatorBrain(height: height, weight: weight);
