@@ -1,6 +1,5 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:health_tracker/screens/news_content_page.dart';
 import '../constants.dart';
 
 class NewsItem extends StatelessWidget {
@@ -16,6 +15,7 @@ class NewsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String newsImage = urlToImage?? 'https://6storage.s3.us-west-2.amazonaws.com/articles/undraw_healthy_options_sdo3%20%281%29.png';
     return Container(
       margin: EdgeInsets.only(bottom: 6.0),
       decoration: BoxDecoration(
@@ -27,12 +27,12 @@ class NewsItem extends StatelessWidget {
           height: 80,
           width: 80,
           child: Image(
-            image: NetworkImage(urlToImage),
+            image:NetworkImage('https://6storage.s3.us-west-2.amazonaws.com/articles/undraw_healthy_options_sdo3%20%281%29.png'),
             fit: BoxFit.cover,
           ),
         ),
         title: Text(
-          title,
+          title?? 'The best fitness Tips' ,
           maxLines: 2,
         ),
       ),

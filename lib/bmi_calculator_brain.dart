@@ -1,7 +1,7 @@
 import 'dart:math';
 
-class CalculatorBrain {
-  CalculatorBrain({this.height, this.weight});
+class BmiCalculatorBrain {
+  BmiCalculatorBrain({this.height, this.weight});
 
   final int height;
   final int weight;

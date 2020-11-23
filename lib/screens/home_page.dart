@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:health_tracker/constants.dart';
-import 'package:health_tracker/screens/diet_plan_page.dart';
+import 'package:health_tracker/screens/diet_input_page.dart';
 import 'package:health_tracker/screens/input_page.dart';
-import 'package:health_tracker/screens/profile_page.dart';
 import 'package:health_tracker/screens/tips_page.dart';
 
 class HomePage extends StatefulWidget {
+static const  routeName ='/home';
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -13,9 +14,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _pages = [
     InputPage(),
-    DietPlanPage(),
+    DietInputPage(),
     TipsPage(),
-    ProfilePage(),
+    //ProfilePage(),
   ];
   int selectedIndex = 0;
   @override
@@ -30,19 +31,19 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.calculate),
                 label: 'BMI',
-                backgroundColor: kInactiveCardColour),
+                backgroundColor: kInactiveCardColour,),
             BottomNavigationBarItem(
                 icon: Icon(Icons.food_bank),
                 label: 'Diet',
-                backgroundColor: kInactiveCardColour),
+                backgroundColor: kInactiveCardColour,),
             BottomNavigationBarItem(
                 icon: Icon(Icons.new_releases),
                 label: 'Tips',
-                backgroundColor: kInactiveCardColour),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.perm_identity_rounded),
-                label: 'Profile',
-                backgroundColor: kInactiveCardColour),
+                backgroundColor: kInactiveCardColour,),
+            // BottomNavigationBarItem(
+            //     icon: Icon(Icons.perm_identity_rounded),
+            //     label: 'Profile',
+            //     backgroundColor: kInactiveCardColour),
           ],
           currentIndex: selectedIndex,
           elevation: 6.0,

@@ -13,17 +13,13 @@ class _TipsPageState extends State<TipsPage> {
   List<Article> newsList = [];
   static const String routeName = '/news';
 
-  void getNewsArticles() async {
-    NewsServices newsResult = NewsServices(newsType: 'fitness tips');
+  Future<List<Article>> getNewsArticles() async {
+    NewsServices newsResult = NewsServices(newsType: 'Fitness Diet Plans');
     await newsResult.getNews();
     newsList = newsResult.newsList;
+    return newsList;
   }
-
-  @override
-  void initState() {
-    getNewsArticles();
-    super.initState();
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -35,29 +31,34 @@ class _TipsPageState extends State<TipsPage> {
         ),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => NewsContentPage(
-                    title: newsList[index].title,
-                    content: newsList[index].content,
-                    author: newsList[index].author,
+      body: FutureBuilder(
+        future: getNewsArticles(),
+        builder: (context, AsyncSnapshot<List<Article>> snapshot){
+          return  ListView.builder(
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NewsContentPage(
+                      title: newsList[index].title,
+                      url: newsList[index].url,
+                    ),
                   ),
-                ),
-              );
-            },
-            child: NewsItem(
-              urlToImage: newsList[index].urlToImage,
-              title: newsList[index].title,
-            ),
-          );
+                );
+              },
+              child: NewsItem(
+                urlToImage: newsList[index].urlToImage,
+                title: newsList[index].title,
+              ),
+            );
+          },
+          itemCount: newsList.length,
+        );
+      
         },
-        itemCount: newsList.length,
-      ),
+       ),
     );
   }
 }

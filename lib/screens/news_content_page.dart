@@ -1,43 +1,21 @@
 import 'package:flutter/material.dart';
-
-import '../constants.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class NewsContentPage extends StatelessWidget {
   static const String routeName = '/news-detail';
   final String title;
-  final String author;
-  final String content;
-  NewsContentPage({this.title, this.author, this.content});
+  final String url;
+  NewsContentPage({this.title, this.url});
 
   @override
   Widget build(BuildContext context) {
+    print(url);
     return Scaffold(
-      appBar: AppBar(),
-      body: ListView(
-        children: [
-          Text(
-            title,
-            style: kLargeButtonTextStyle,
-          ),
-          SizedBox(
-            height: 15.0,
-          ),
-          Row(
-            children: [
-              Icon(
-                Icons.person,
-                color: Colors.white,
-              ),
-              SizedBox(
-                width: 10.0,
-              ),
-              Text(author),
-              Divider(color: Colors.white12),
-            ],
-          ),
-          Text(content)
-        ],
-      ),
+      appBar: AppBar(title: Text(title ?? 'Best Fitness '),),
+      body: WebView(
+         initialUrl: url,
+         javascriptMode: JavascriptMode.unrestricted,
+        )
     );
   }
 }

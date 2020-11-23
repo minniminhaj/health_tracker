@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:health_tracker/screens/diet_plan_page.dart';
+import 'package:health_tracker/screens/diet_input_page.dart';
 import 'package:health_tracker/screens/home_page.dart';
+import 'package:health_tracker/screens/initial_page.dart';
 import 'package:health_tracker/screens/news_content_page.dart';
 import 'screens/input_page.dart';
 
@@ -16,9 +17,10 @@ class BMICalculator extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xFF0A0E21),
       ),
       routes: {
-        '/': (context) => HomePage(),
+        '/': (context) => InitialPage(),
+        HomePage.routeName: (context) => HomePage(),
         InputPage.routeName: (context) => InputPage(),
-        DietPlanPage.routeName: (context) => DietPlanPage(),
+        DietInputPage.routeName: (context) => DietInputPage(),
         NewsContentPage.routeName: (context) => NewsContentPage()
       },
     );
