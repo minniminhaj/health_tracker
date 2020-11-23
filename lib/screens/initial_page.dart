@@ -30,8 +30,6 @@ class InitialPage extends StatelessWidget {
               'Health Tracker',
                 style: kLargeButtonTextStyle
               ),
-              
-             
            ],
          ),
       ),

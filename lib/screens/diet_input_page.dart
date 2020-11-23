@@ -24,7 +24,7 @@ class _InputPageState extends State<DietInputPage> {
           children: <Widget>[
             SliderCard(
               isFirstRow: true,
-              labelName: 'HEIGHT',
+              labelName: 'Height',
               labelValue: model.height,
               labelUnits: 'cm',
               sliderMinimumValue: kMinimumHeight.toDouble(),
@@ -50,7 +50,7 @@ class _InputPageState extends State<DietInputPage> {
               },
             ),
             SliderCard(
-              labelName: 'WEIGHT',
+              labelName: 'Weight',
               labelValue: model.weight,
               labelUnits: 'kg',
               sliderMinimumValue: kMinimumWeight.toDouble(),
@@ -76,7 +76,7 @@ class _InputPageState extends State<DietInputPage> {
               },
             ),
             WrapCard(
-              labelName: 'ACTIVITY LEVEL',
+              labelName: 'Activity Plan',
               buttonNames: model.activityLevelNames,
               buttonStates: model.activityLevelStates,
               onButtonPressed: (int pressedButtonIndex) {
@@ -90,7 +90,7 @@ class _InputPageState extends State<DietInputPage> {
               },
             ),
             WrapCard(
-              labelName: 'FITNESS GOAL',
+              labelName: 'Fitness Goal',
               buttonNames: model.fitnessGoalNames,
               buttonStates: model.fitnessGoalStates,
               onButtonPressed: (int pressedButtonIndex) {

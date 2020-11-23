@@ -68,3 +68,5 @@ const kTextStyleText = TextStyle(
 
 const kIconSize = 50.0;
 final kIconColour = Colors.black87;
+
+final kTransparentImage = Image.asset('assets/images/undraw_Activity_tracker_re_2lvv.png');
